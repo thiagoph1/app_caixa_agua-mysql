@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 
 import 'my_app.dart';
 
+/* Main
+  Função sem tela, inicializa a aplicação
+
+ */
 void main() {
   runApp(const MyApp());
 }

@@ -2,14 +2,20 @@
 
 import 'package:app_caixa_agua/pages/tela_segunda.dart';
 import 'package:flutter/material.dart';
-
 import '../models/dados.dart';
 
+/* TELA DE HISTORICO 
+Onde é mostrado os registros do banco, podendo ser clicado os cards de informação
+que será encaminhado para Tela Segunda com mais informações;
+Nessa tela só é mostrado o volume em porcentagem e a data.
+
+*/
+
 class TelaHistorico extends StatelessWidget {
-  final List<Dados> dados;
-
-  const TelaHistorico(this.dados);
-
+  final List<Dados> dados; // Variavel que vem da outra tela
+  const TelaHistorico( this.dados);
+/*------------------------------------------------------------------------*/
+ // Constrói a lista
   @override
   Widget build(context) {
     return ListView.builder(
@@ -19,7 +25,8 @@ class TelaHistorico extends StatelessWidget {
       },
     );
   }
-
+/*------------------------------------------------------------------------*/
+ // Constrói os itens da lista
   Widget itemLista(Dados dados, BuildContext context) {
         return ListTile(
         title: Card(
@@ -49,6 +56,7 @@ class TelaHistorico extends StatelessWidget {
             ),
           ),
         ),
+        // Se clicar no card abre a Tela Segunda
         onTap: () {
           var rotas = MaterialPageRoute(
             builder: (BuildContext context) => TelaSegunda(valor: dados),

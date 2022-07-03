@@ -3,15 +3,21 @@ import 'package:flutter/material.dart';
 import '../models/dados.dart';
 import '../repositories/dados_repository.dart';
 
+/* Tela Inical
+  Onde aparece mensagem de erro se tiver, indicador circular se tiver carregando;
+  Ou encaminha para a Tela Historica se tiver dados.
+
+ */
+
 class TelaInicial extends StatefulWidget {
   const TelaInicial({Key? key}) : super(key: key);
-
   @override
   State<TelaInicial> createState() => _TelaInicialState();
 }
-
 class _TelaInicialState extends State<TelaInicial> {
   @override
+/*------------------------------------------------------------------------*/
+  // Build
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(),
@@ -33,7 +39,8 @@ class _TelaInicialState extends State<TelaInicial> {
       ),
     );
   }
-
+/*------------------------------------------------------------------------*/
+  // App Bar - Barra Superi
   PreferredSizeWidget _appBar() {
     return AppBar(
       title: const Text('CAIXA D\'ÁGUA'),
